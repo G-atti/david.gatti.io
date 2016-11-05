@@ -1,10 +1,10 @@
-<img src="images/davidgatti.jpg">
+<img src="images/davidgatti.jpg" class="text-center" width="100px">
 
 <h1>David Gatti</h1>
 
-<p>❤️ learning about new technologies, 🗣 on podcasts about interesting stuff, and taking nice 📸 with my iPhone.</p>
+<p id="slogan">❤️ learning about new technologies, 🗣 on podcasts about interesting stuff, and taking nice 📸 with my iPhone.</p>
 
-<ul>
+<ul id="menu" class="clearfix">
 	<li><a [routerLink]="['/']">Home</a></li>
 	<li><a [routerLink]="['/podcasts/']">Podcasts</a></li>
 	<li><a [routerLink]="['/articles/']">Articles</a></li>
@@ -12,7 +12,5 @@
 	<li><a [routerLink]="['/software_projects/']">Software Projects</a></li>
 	<li><a [routerLink]="['/hardware_projects/']">Hardware Projects</a></li>
 </ul>
-
-<hr>
 
 <router-outlet></router-outlet>

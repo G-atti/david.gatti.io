@@ -1,3 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
 	padding: 20px;
 }
+
+#slogan {
+	width: 400px;
+	text-align: center;
+	padding: 0 0 20px 0;
+}
+
+#menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	background-color: black;
+}
+
+/* Change the link color to #111 (black) on hover */
+#menu li a:hover {
+	color: black;
+	background-color: white;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+/* start commented backslash hack \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+/* close commented backslash hack */

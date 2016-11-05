@@ -17,7 +17,7 @@ if (app.get('env') !== 'production') {
   app.use(express.static(__dirname + "/node_modules"));
 }
 
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//npm run startapp.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
