@@ -13,6 +13,7 @@ var isPublic = typeof window != "undefined";
 		'app':                        (isPublic)? '' : 'app', // 'dist',
 		'@angular':                   (isPublic)? '@angular' : 'node_modules/@angular',
 		'angular2-in-memory-web-api': (isPublic)? 'angular2-in-memory-web-api' : 'node_modules/angular2-in-memory-web-api',
+		'@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
 		'rxjs':                       (isPublic)? 'rxjs' : 'node_modules/rxjs'
 	};
 

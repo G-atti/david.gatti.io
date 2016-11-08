@@ -15,6 +15,7 @@ if (app.get('env') !== 'production') {
   //  expose node_modules to client app
   //
   app.use(express.static(__dirname + "/node_modules"));
+  app.use(express.static(__dirname + "/bower_components"));
 }
 
 //npm run startapp.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

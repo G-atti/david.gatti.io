@@ -6,22 +6,41 @@
 h1 {
 	padding: 20px;
 }
+#avatar {
+	padding: 20px 0 0 0;
+}
+
+#something {
+	width:800px; margin:0 auto;
+}
+
+#box {
+	padding: 0px 0 0 0;
+	width: 1000px;
+	margin:0 auto;
+}
 
 #slogan {
-	width: 400px;
 	text-align: center;
-	padding: 0 0 20px 0;
+	width: 400px;
+	margin:0 auto;
+	padding-bottom: 20px;
 }
 
 #menu ul {
+	position: relative;
 	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
+	margin: 0 auto;
+	width: 100px;
+	padding-bottom: 20px;
 }
 
 #menu li {
-	float: left;
+	float: none;
+	display: inline-block;
+	*display: inline; 	/* ie7 fix */
+	*zoom: 1; 			/* hasLayout ie7 trigger */
+	vertical-align: top;
 }
 
 #menu li a {
@@ -33,31 +52,7 @@ h1 {
 	background-color: black;
 }
 
-/* Change the link color to #111 (black) on hover */
 #menu li a:hover {
 	color: black;
 	background-color: white;
 }
-
-.clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
-}
-
-.clearfix {
-	display: inline-block;
-}
-
-/* start commented backslash hack \*/
-* html .clearfix {
-	height: 1%;
-}
-
-.clearfix {
-	display: block;
-}
-/* close commented backslash hack */

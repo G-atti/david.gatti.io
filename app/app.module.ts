@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './components/header/header.component';
 import { ArticleComponent } from './components/articles/article.component';
@@ -17,6 +18,7 @@ import { routing } from "./routes";
         BrowserModule,
         HttpModule,
         JsonpModule,
+        NgbModule,
         routing
     ],
     declarations: [
