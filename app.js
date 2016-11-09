@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //
 //  ROUTES
 //
-app.use('/users', users);
+app.use('/users', require('./routes/users'));
 
 //
 //  catch 404 and forward to error handler
