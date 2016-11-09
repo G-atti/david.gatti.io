@@ -9,7 +9,7 @@ let app = express();
 //  Set public paths
 //
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'app')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
 
 //
 //  Remove the information about what type of framework is the site running on
