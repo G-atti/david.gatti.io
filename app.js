@@ -10,6 +10,7 @@ let app = express();
 //
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 
 //
 //  Remove the information about what type of framework is the site running on
