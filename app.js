@@ -1,63 +1,90 @@
-var path = require('path');
-var logger = require('morgan');
-var express = require('express');
-var favicon = require('serve-favicon');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
+let path = require('path');
+let logger = require('morgan');
+let express = require('express');
+let bodyParser = require('body-parser');
 
-var users = require('./routes/users');
-
-var app = express();
+let app = express();
 
 //
-//  expose node_modules to client app
+//  Set public paths
 //
-app.use(express.static(__dirname + "/node_modules"));
-app.use(express.static(__dirname + '/bower_components'));
-
-//npm run startapp.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app')));
 
+//
+//  Remove the information about what type of framework is the site running on
+//
+app.disable('x-powered-by');
+
+//
+// HTTP request logger middleware for node.js
+//
+app.use(logger('dev'));
+
+//
+//  Parse JSON requests
+//
+app.use(bodyParser.json());
+
+//
+//  Parse application/x-www-form-urlencoded
+//
+app.use(bodyParser.urlencoded({ extended: false }))
+
+//
+//  ROUTES
+//
 app.use('/users', users);
 
-// catch 404 and forward to error handler
+//
+//  catch 404 and forward to error handler
+//
 app.use(function(req, res, next) {
 
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
-  next(err);
+  throw err;
 
 });
 
-// error handlers
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development')
-{
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.json({
-      message: err.message,
-      error: err
-    });
-  });
-}
-
+//
+//  Display any error that occurred during the request.
+//
 app.use(function(err, req, res, next) {
 
+  //
+  //  1.  Set the basic information about the error, that is going to be
+  //    displayed to user and developers regardless.
+  //
+  let obj_message = {
+    error: err.message,
+    error_description: err.description
+  }
+
+  //
+  //  2.  Check if the environment is development, and if it is we
+  //    will display the stack-trace
+  //
+  if(process.env.NODE_ENV == 'development')
+  {
+    //
+    //  -> Show the error in the console
+    //
+    console.error(err);
+  }
+
+  //
+  //  3.  Display a default status error, or pass the one from
+  //    the error message
+  //
   res.status(err.status || 500);
-  res.json({
-    message: err.message,
-    error: {}
-  });
+
+  //
+  //  ->  Show the error
+  //
+  res.json(obj_message);
 
 });
 
-
 module.exports = app;
+
