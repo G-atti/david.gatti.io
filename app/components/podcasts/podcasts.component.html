@@ -1,11 +1,9 @@
 <h2>Podcasts</h2>
 
-<ul>
-    <li><a href="http://nodogmapodcast.bryanhogan.net/55-david-gatti-developer-communities/" target="_blank">Episode 55</a>: Talking about Developer Communities with <a href="https://twitter.com/bryanjhogan">Bryan Hogan</a>.</li>
-    <li><a href="http://mentoringdevelopers.com/episode-36-how-to-pick-a-programming-language-to-learn-for-new-developers-part-2/" target="_blank">Episode 36</a>: How to pick a programming language to learn for new developers - Part 2.</li>
-    <li><a href="http://mentoringdevelopers.com/episode33" target="_blank">Episode 33</a>: Panel Discussion on building a great team.</li>
-    <li><a href="https://twit.tv/shows/coding-101/episodes/70" target="_blank">Coding 101, Twit.tv</a>: Having a chat with Padre Robert about my history and experience in the field.</li>
-    <li><a href="http://www.dotnetrocks.com/?show=1281" target="_blank">.NET Rocks!</a>: Talking about NodeJS, and explaining some of its hidden features.</li>
-    <li><a href="http://mentoringdevelopers.com/episode-31-panel-discussion-on-choosing-the-right-programming-language-to-learn/" target="_blank">Episode 31: Mentoring Developers</a>: Panel discussion on which language a new developer should choose - Part 1.</li>
-    <li><a href="https://twit.tv/shows/floss-weekly/episodes/386?autostart=false" target="_blank">FLOSS WEEKLY</a>: Sadly I believe this was my worst interview to date. I think we all were out of sync and expecting something different from each other. Which made this episode super strange. But now it lives on the internet, and I can only embrace it :)</li>
+<p *ngFor="let arr of data.text"> {{ arr }}</p>
+
+<ul >
+	<li *ngFor="let list of data.list">
+		<a href="{{ list.url }} " target="_blank">{{ list.text }} </a>
+	</li>
 </ul>

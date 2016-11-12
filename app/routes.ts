@@ -8,12 +8,12 @@ import { SoftwareProjectsComponent } from './components/software_projects/softwa
 import { TechnicalArticlesComponent } from './components/technical_articles/technical_articles.component';
 
 export const routes: Routes = [
-    { path: 'articles', component: ArticleComponent },
-    { path: 'hardware_projects', component: HardwareProjectsComponent },
+    { path: 'articles', component: ArticleComponent, terminal: true },
+    { path: 'hardware_projects', component: HardwareProjectsComponent, terminal: true },
     { path: '', component: HomeComponent, terminal: true },
-    { path: 'podcasts', component: PodcastsComponent },
-    { path: 'software_projects', component: SoftwareProjectsComponent },
-    { path: 'technical_articles', component: TechnicalArticlesComponent }
+    { path: 'podcasts', component: PodcastsComponent, terminal: true },
+    { path: 'software_projects', component: SoftwareProjectsComponent, terminal: true },
+    { path: 'technical_articles', component: TechnicalArticlesComponent, terminal: true }
 ];
 
 export const routing = RouterModule.forRoot(routes, { useHash: true });

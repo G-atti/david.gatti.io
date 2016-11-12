@@ -10,12 +10,12 @@ import 'rxjs/add/operator/map';
 
 export class HomeComponent
 {
-	users: {};
+	home = {};
 
 	constructor(http: Http)
 	{
-		http.get("/users")
+		http.get("/home")
 			.map(data => data.json())
-			.subscribe((data) => this.users = data);
+			.subscribe((data) => this.home = data);
 	}
 }

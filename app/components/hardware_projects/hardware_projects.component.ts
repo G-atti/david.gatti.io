@@ -10,12 +10,12 @@ import 'rxjs/add/operator/map';
 
 export class HardwareProjectsComponent
 {
-	users: {};
+	data = {};
 
 	constructor(http: Http)
 	{
-		http.get("/users")
+		http.get("/hardware_projects")
 			.map(data => data.json())
-			.subscribe((data) => this.users = data);
+			.subscribe((data) => this.data = data);
 	}
 }

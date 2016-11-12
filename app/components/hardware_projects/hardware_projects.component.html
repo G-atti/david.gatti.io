@@ -1,9 +1,9 @@
 <h2>Hardware Projects</h2>
 
-<p>I'm passionate about electronics, and I love the whole IoT idea.</p>
+<p *ngFor="let arr of data.text"> {{ arr }}</p>
 
-<ul>
-	<li><a href="https://github.com/davidgatti/What-Is-My-IP" target="_blank">WiMi: What Is My IP</a>: WiMi is a simple solution to constantly stay up to date with your ever changing public IP.</li>
-	<li><a href="https://www.hackster.io/davidgatti/garage-opener-591175?ref=user&ref_id=6416&offset=2" target="_blank">IoT Garage Opener</a>: Modify your existing remote to connect it to the Internet.</li>
-	<li><a href="https://www.hackster.io/davidgatti/iot-water-flow-meter-4595ff?ref=user&ref_id=6416&offset=1" target="_blank">IoT Water Flow Meter</a>: Measure and track the amount of water that you use at home.</li>
+<ul >
+	<li *ngFor="let list of data.list">
+		<a href="{{ list.url }} " target="_blank">{{ list.text }} </a>
+	</li>
 </ul>

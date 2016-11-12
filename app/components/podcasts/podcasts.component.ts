@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Http } from "@angular/http";
+import 'rxjs/add/operator/map';
 
 @Component({
-	selector: 'my-about',
+	selector: 'my-podcast',
 	templateUrl: 'components/podcasts/podcasts.component.html',
 	styleUrls: ['components/podcasts/podcasts.component.css']
 })
 
 export class PodcastsComponent
 {
-	param: string;
+	data = {};
 
-	constructor(private params: ActivatedRoute)
+	constructor(http: Http)
 	{
-		params.params
-			.subscribe((data: { id?: string}) => this.param = data.id);
+		http.get("/podcasts")
+			.map(data => data.json())
+			.subscribe((data) => this.data = data);
 	}
 }

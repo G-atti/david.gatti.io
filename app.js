@@ -36,7 +36,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //
 //  ROUTES
 //
-app.use('/users', require('./routes/users'));
+app.use('/articles', require('./routes/articles'));
+app.use('/hardware_projects', require('./routes/hardware_projects'));
+app.use('/home', require('./routes/home'));
+app.use('/podcasts', require('./routes/podcasts'));
+app.use('/software_projects', require('./routes/software_projects'));
+app.use('/technical_articles', require('./routes/technical_articles'));
 
 //
 //  catch 404 and forward to error handler

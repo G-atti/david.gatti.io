@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Http } from "@angular/http";
+import 'rxjs/add/operator/map';
 
 @Component({
 	directives: [ROUTER_DIRECTIVES],
@@ -10,5 +12,12 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 export class HeaderComponent
 {
-	constructor() {}
+	users: {};
+
+	constructor(http: Http)
+	{
+		http.get("/home")
+			.map(data => data.json())
+			.subscribe((data) => this.users = data);
+	}
 }

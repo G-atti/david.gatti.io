@@ -10,3 +10,5 @@ public/ng2
 *.ipr
 .DS_Store
 /bower_components
+/public/js/bundle.js
+/public/js/bundle.min.js
