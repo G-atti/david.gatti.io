@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>David Gatti	</title>
+
+	</head>
+	<body>
+	<div class="row-fluid">
+
+		<div class="col-md-12 text-center">
+
+			<div id="avatar">
+				<img src="images/davidgatti.jpg" class="img-rounded" width="100px" height="133px">
+			</div>
+
+			<h1>David Gatti</h1>
+
+			<p id="slogan">I ❤️ learning about new technologies, 🗣 on podcasts about interesting stuff, and I'm passionate about taking nice 📸 with my iPhone.</p>
+
+			<ul id="menu" class="clearfix">
+				<li><a [routerLink]="['/']">Home</a></li>
+				<li><a [routerLink]="['/podcasts/']">Podcasts</a></li>
+				<li><a [routerLink]="['/articles/']">Articles</a></li>
+				<li><a [routerLink]="['/technical_articles/']">Technical Articles</a></li>
+				<li><a [routerLink]="['/software_projects/']">Software Projects</a></li>
+				<li><a [routerLink]="['/hardware_projects/']">Hardware Projects</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	<div id="box" class="clearfix">
+		{{> features }}
+	</div>
+</body>
