@@ -1,0 +1,7 @@
+<p>I'm passionate about electronics, and I love the whole IoT idea.</p>
+
+<ul>
+	{{#data.length}}
+	{{#data}}<li><a href="{{url}}" target="_blank">{{text}}</a></li>{{/data}}
+	{{/data.length}}
+</ul>

@@ -1,0 +1,7 @@
+<p>I enjoy thinking through complex problems, and when I feel I've arrived at a meaningful conclusion or solution, I write it down.</p>
+
+<ul>
+	{{#data.length}}
+	{{#data}}<li><a href="{{url}}" target="_blank">{{text}}</a></li>{{/data}}
+	{{/data.length}}
+</ul>

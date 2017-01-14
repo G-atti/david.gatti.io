@@ -1,0 +1,7 @@
+<p>I had fun as an Android developer, and made some very simple apps for the platform. To my surprise, the autoWiFi app I created was installed more than 100,000 times around the world and received numerous positive comments.</p>
+
+<ul>
+	{{#data.length}}
+	{{#data}}<li><a href="{{url}}" target="_blank">{{text}}</a></li>{{/data}}
+	{{/data.length}}
+</ul>
