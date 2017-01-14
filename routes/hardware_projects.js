@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 	res.render("index", {
 		title: "Title",
 		partials: {
-			content: 'home',
+			content: 'hardware_projects',
 		}
 	});
 
