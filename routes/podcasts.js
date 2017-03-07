@@ -7,6 +7,10 @@ let router = express.Router();
 //
 let data = [
 		{
+			text: "🎙 Episode 56: Working remotely overseas and loving it",
+			url: "http://mentoringdevelopers.com/episode-56-working-remotely-overseas-and-loving-it-with-david-gatti/"
+		},
+		{
 			text: "🎙 Episode 55: Talking about Developer Communities with Bryan Hogan.",
 			url: "http://nodogmapodcast.bryanhogan.net/55-david-gatti-developer-communities/"
 		},
