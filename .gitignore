@@ -10,3 +10,4 @@ public/ng2
 *.ipr
 .DS_Store
 /bower_components
+*.env

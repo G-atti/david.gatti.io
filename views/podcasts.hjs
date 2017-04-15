@@ -1,7 +1,13 @@
-<p>I like to share my experience and point of view also in voice format.</p>
+<div class="col-md-6 col-sm-12">
 
-<ul>
-	{{#data.length}}
-	{{#data}}<li><a href="{{url}}" target="_blank">{{text}}</a></li>{{/data}}
-	{{/data.length}}
-</ul>
+	<h1>{{title}}</h1>
+
+	<p>{{description}}</p>
+
+	<ul>
+		{{#data.length}}
+			{{#data}}<li>{{icon}} <a href="{{url}}" target="_blank">{{text}}</a></li>{{/data}}
+		{{/data.length}}
+	</ul>
+
+</div>

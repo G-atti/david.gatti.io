@@ -8,10 +8,10 @@ router.get('/', function(req, res, next) {
 	//	->	Render the HTML page
 	//
 	res.render("_frame", {
-		title: "David Gatti",
-		description: "I ❤️ learning about new technologies, 🗣 on podcasts about interesting stuff, and I'm passionate about taking nice 📸 with my iPhone.",
+		title: "David Gatti // Bio",
+		description: "",
 		partials: {
-			content: 'index',
+			content: 'bio',
 		}
 	});
 

@@ -1,7 +1,13 @@
-<p>Open Source Article: My passion is to take difficult problems, dissect them, break them down into small, manageable chunks, and resolve them.</p>
+<div class="col-md-6 col-sm-12">
 
-<ul>
-	{{#data.length}}
-	{{#data}}<li><a href="{{url}}" target="_blank">{{text}}</a></li>{{/data}}
-	{{/data.length}}
-</ul>
+	<h1>{{title}}</h1>
+
+	<p>{{description}}</p>
+
+	<ul>
+		{{#data.length}}
+			{{#data}}<li>{{icon}} <a href="{{url}}" target="_blank">{{text}}</a></li>{{/data}}
+		{{/data.length}}
+	</ul>
+
+</div>
