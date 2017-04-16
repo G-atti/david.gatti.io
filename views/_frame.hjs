@@ -26,6 +26,13 @@
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/main.css">
 
+		<script>
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};
+			ga('create', 'UA-97389973-1', 'auto');
+			ga('set', 'transport', 'beacon');
+			ga('send', 'pageview');
+		</script>
+
 	</head>
 
 <body>
@@ -68,6 +75,7 @@
 
 	</div>
 
+	<script async src="https://www.google-analytics.com/analytics.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
