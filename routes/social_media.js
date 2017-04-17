@@ -22,6 +22,16 @@ let data = [
 			icon: "📸"
 		},
 		{
+			text: "Hackster.io",
+			url: "https://www.hackster.io/davidgatti",
+			icon: "👾"
+		}		,
+		{
+			text: "Hackaday.io",
+			url: "https://hackaday.io/davidgatti",
+			icon: "🎃"
+		},
+		{
 			text: "Twitter",
 			url: "https://twitter.com/dawidgatti",
 			icon: "🦉"
