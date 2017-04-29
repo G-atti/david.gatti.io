@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 	//
 	res.render("_frame", {
 		title: "David Gatti",
-		description: "I ❤️ learning about new technologies, 🗣 on podcasts about interesting stuff, and I'm passionate about taking nice 📸 with my iPhone.",
+		description: "I ♥ learning about new technologies, talking on podcasts about interesting stuff, and I'm passionate about taking nice photos with my iPhone.",
 		partials: {
 			content: 'index',
 		}
