@@ -7,6 +7,11 @@ let router = express.Router();
 //
 let data = [
 		{
+			text: "Monitor file changes and restart your NodeJS server inside a Docker container",
+			url: "https://github.com/davidgatti/persempre",
+			icon: "👓"
+		},
+		{
 			text: "My personal default template for a ExpressJS projects",
 			url: "https://github.com/davidgatti/express-generator-dg",
 			icon: "🙂"
