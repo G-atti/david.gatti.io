@@ -26,6 +26,46 @@ app.disable('x-powered-by');
 app.use(force_https);
 
 //
+// 	lets wear the heltmet first
+//
+app.use(helmet());
+
+//
+//	Strict-Transport-Security
+//
+//	Tell the browser, that the next time it connects to the site, it should
+//	connect immediately over HTTPS
+//
+app.use(helmet.hsts({
+	maxAge: 15638400,
+	includeSubDomains: true,
+	force: true
+}));
+
+//
+//	Make sure the cached data is always validated with the server before
+//	it get used.
+//
+app.use(helmet.noCache());
+
+//
+//	Set the custom headers.
+//
+app.use(helmet.contentSecurityPolicy({
+	directives: {
+		defaultSrc: ["'none'"],
+		connectSrc: ["'self'", "https://www.google-analytics.com/collect", "https://fullstory.com", "https://r.fullstory.com"],
+		fontSrc: ["'self'"],
+		frameSrc: ["'self'"],
+		imgSrc: ["'self'", "data:", "https://www.google-analytics.com", "https://www.facebook.com"],
+		mediaSrc: ["'none'"],
+		objectSrc: ["'none'"],
+		scriptSrc: ["'self'", "'unsafe-inline'", "https://www.google-analytics.com", "https://connect.facebook.net", "https://fullstory.com"],
+		styleSrc: ["'self'", "'unsafe-inline'"]
+	}
+}));
+
+//
 //	Expose the public folder to the world
 //
 app.use(express.static(path.join(__dirname, 'public')));
