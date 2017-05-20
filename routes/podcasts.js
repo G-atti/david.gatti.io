@@ -7,6 +7,11 @@ let router = express.Router();
 //
 let data = [
 		{
+			text: "Episode 59: How software developers can make the Web secure",
+			url: "http://mentoringdevelopers.com/episode-59-how-software-developers-can-make-the-web-secure/",
+			icon: "🎙"
+		},
+		{
 			text: "Episode 57: How to Sell Yourself and Find Work",
 			url: "http://mentoringdevelopers.com/episode-57-how-to-sell-yourself-and-find-work/",
 			icon: "🎙"
