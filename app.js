@@ -70,6 +70,7 @@ app.use(helmet.contentSecurityPolicy({
 //	Expose the public folder to the world
 //
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '.well-known')));
 
 //
 // HTTP request logger middleware for node.js
