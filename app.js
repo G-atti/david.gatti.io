@@ -152,41 +152,4 @@ app.use(function(err, req, res, next) {
 
 });
 
-//   _    _ ______ _      _____  ______ _____   _____
-//  | |  | |  ____| |    |  __ \|  ____|  __ \ / ____|
-//  | |__| | |__  | |    | |__) | |__  | |__) | (___
-//  |  __  |  __| | |    |  ___/|  __| |  _  / \___ \
-//  | |  | | |____| |____| |    | |____| | \ \ ____) |
-//  |_|  |_|______|______|_|    |______|_|  \_\_____/
-//
-
-//
-//	Check if the connection is secure, if not, redirect to a secure one.
-//
-function force_https(req, res, next)
-{
-	//
-	//	1. 	Redirect only in the production environment
-	//
-	if(process.env.NODE_ENV == 'production')
-	{
-		//
-		//	1. 	Check what protocol are we using
-		//
-		if(req.headers['x-forwarded-proto'] !== 'https')
-		{
-			//
-			//	-> 	Redirect the user to the same URL that he requested, but
-			//		with HTTPS instead of HTTP
-			//
-			return res.redirect('https://' + req.get('host') + req.url);
-		}
-	}
-
-	//
-	//	2. 	If the protocol is already HTTPS the, we just keep going.
-	//
-	next();
-}
-
 module.exports = app;
