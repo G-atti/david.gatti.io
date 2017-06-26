@@ -22,11 +22,6 @@ app.set('view engine', 'hjs');
 app.disable('x-powered-by');
 
 //
-//	Force HTTPS before the client can access anything
-//
-app.use(force_https);
-
-//
 // 	lets wear the heltmet first
 //
 app.use(helmet());
