@@ -4,6 +4,11 @@ let router = express.Router();
 
 let data = [
 		{
+			text: "How to go about making a successful startup",
+			url: "https://medium.com/@davidgatti/how-to-go-about-making-a-successful-startup-9b5de8f3f082",
+			icon: "📰"
+		},
+		{
 			text: "How to Become a Better Manager",
 			url: "https://medium.com/@davidgatti/how-to-become-a-better-manager-1031d4749c70",
 			icon: "📰"

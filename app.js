@@ -85,7 +85,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //////////////////////////////////////////////////////////////////////////////
 
 app.use('/', 					require('./routes/index'));
-app.use('/bio', 				require('./routes/bio'));
 app.use('/podcasts', 			require('./routes/podcasts'));
 app.use('/articles', 			require('./routes/articles'));
 app.use('/technical_articles', 	require('./routes/technical_articles'));

@@ -46,7 +46,7 @@ let data = [
 			icon: "🎙"
 		},
 		{
-			text: "FLOSS WEEKLY: Sadly I believe this was my worst interview to date. I think we all were out of sync and expecting something different from each other. Which made this episode super strange. But now it lives on the Internet, and I can only embrace it :)",
+			text: "FLOSS WEEKLY: Discussing Open Source",
 			url: "https://twit.tv/shows/floss-weekly/episodes/386?autostart=false",
 			icon: "🎙"
 		}
