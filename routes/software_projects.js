@@ -7,6 +7,16 @@ let router = express.Router();
 //
 let data = [
 		{
+			text: "A SystemD config generators for NodeJS projects",
+			url: "https://github.com/davidgatti/toSystemD",
+			icon: "😍"
+		},
+		{
+			text: "Generate Nginx configuration files based on the user input",
+			url: "https://github.com/davidgatti/ginnx",
+			icon: "🎗"
+		},
+		{
 			text: "Monitor file changes and restart your NodeJS server inside a Docker container",
 			url: "https://github.com/davidgatti/persempre",
 			icon: "👓"

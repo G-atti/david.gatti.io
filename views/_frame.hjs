@@ -72,7 +72,6 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="/podcasts">Podcasts</a></li>
-					<li><a href="/articles">Articles</a></li>
 					<li><a href="/technical_articles">Technical Articles</a></li>
 					<li><a href="/software_projects">Software Projects</a></li>
 					<li><a href="/hardware_projects">Hardware Projects</a></li>

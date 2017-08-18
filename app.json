@@ -1,7 +1,7 @@
 {
-	"name": "",
-	"description": "",
-	"repository": "",
+	"name": "david-gatti-pl",
+	"description": "My little home page",
+	"repository": "https://github.com/davidgatti/david.gatti.pl",
 	"success_url": "/",
 	"env": {
 		"NODE_ENV": {
@@ -14,6 +14,10 @@
 		"BASE_URL": {
 			"description": "The URL of the project",
 			"value": "https://NAME_OF_THE_SERVER.herokuapp.com"
+		},
+		"PORT": {
+			"description": "Set the port for development. Will be overwritten by Heroku for example",
+			"value": "3000"
 		}
 	}
 }

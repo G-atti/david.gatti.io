@@ -1,30 +1,59 @@
-let path = require('path');
-let helmet = require('helmet');
-let logger = require('morgan');
-let express = require('express');
-let bodyParser = require('body-parser');
+//  __  __    ____    _____    _    _   _        ______    _____
+// |  \/  |  / __ \  |  __ \  | |  | | | |      |  ____|  / ____|
+// | \  / | | |  | | | |  | | | |  | | | |      | |__    | (___
+// | |\/| | | |  | | | |  | | | |  | | | |      |  __|    \___ \
+// | |  | | | |__| | | |__| | | |__| | | |____  | |____   ____) |
+// |_|  |_|  \____/  |_____/   \____/  |______| |______| |_____/
+//
 
+//
+//	Module for working with file and directory paths
+//
+let path = require('path');
+
+//
+//	HTTP request logger middleware for NodeJS
+//
+let logger = require('morgan');
+
+//
+//	Fast, unopinionated, minimalist web framework
+//
+let express = require('express');
+
+//
+//	Parse incoming request bodies in a middleware before your handlers,
+//	available under the req.body property.
+//
+let body_parser = require('body-parser');
+
+//
+//	Add basic security headers to each request.
+//
+let helmet = require('helmet');
+
+//
+//	Compress the response to reduce page size
+//
+let compression = require('compression');
+
+//
+//	Save the express framework in a simple variable
+//
 let app = express();
 
+//   _____   ______   _______   _______   _____   _   _    _____    _____
+//  / ____| |  ____| |__   __| |__   __| |_   _| | \ | |  / ____|  / ____|
+// | (___   | |__       | |       | |      | |   |  \| | | |  __  | (___
+//  \___ \  |  __|      | |       | |      | |   | . ` | | | |_ |  \___ \
+//  ____) | | |____     | |       | |     _| |_  | |\  | | |__| |  ____) |
+// |_____/  |______|    |_|       |_|    |_____| |_| \_|  \_____| |_____/
 //
-//	Tell NodeJS where to look for views
-//
-app.set('views', path.join(__dirname, 'views'));
 
 //
-//	Load the Hogan HTML engine
+//	Compress the response with Gzip
 //
-app.set('view engine', 'hjs');
-
-//
-//	Remove the information about what type of framework is the site running on
-//
-app.disable('x-powered-by');
-
-//
-// 	lets wear the heltmet first
-//
-app.use(helmet());
+app.use(compression());
 
 //
 //	Strict-Transport-Security
@@ -61,10 +90,30 @@ app.use(helmet.contentSecurityPolicy({
 	}
 }));
 
+
+//
+//	Tell NodeJS where to look for views
+//
+app.set('views', path.join(__dirname, 'views'));
+
+//
+//	Load the Hogan HTML engine
+//
+app.set('view engine', 'hjs');
+
+//
+//	Remove the information about what type of framework is the site running on
+//
+app.disable('x-powered-by');
+
 //
 //	Expose the public folder to the world
 //
 app.use(express.static(path.join(__dirname, 'public')));
+
+//
+//
+//
 app.use(express.static(path.join(__dirname, '.well-known')));
 
 //
@@ -75,14 +124,22 @@ app.use(logger('dev'));
 //
 //	Parse all request as regular text, and not JSON objects
 //
-app.use(bodyParser.json());
+app.use(body_parser.json());
 
 //
 //	Parse application/x-www-form-urlencoded
 //
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(body_parser.urlencoded({ extended: false }));
 
-//////////////////////////////////////////////////////////////////////////////
+//  _____     ____    _    _   _______   ______    _____
+// |  __ \   / __ \  | |  | | |__   __| |  ____|  / ____|
+// | |__) | | |  | | | |  | |    | |    | |__    | (___
+// |  _  /  | |  | | | |  | |    | |    |  __|    \___ \
+// | | \ \  | |__| | | |__| |    | |    | |____   ____) |
+// |_|  \_\  \____/   \____/     |_|    |______| |_____/
+//
+
+////////////////////////////////////////////////////////////////////////////////
 
 app.use('/', 					require('./routes/index'));
 app.use('/podcasts', 			require('./routes/podcasts'));
@@ -92,7 +149,15 @@ app.use('/software_projects', 	require('./routes/software_projects'));
 app.use('/hardware_projects', 	require('./routes/hardware_projects'));
 app.use('/social_media', 		require('./routes/social_media'));
 
-//////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+//  ______   _____    _____     ____    _____     _____
+// |  ____| |  __ \  |  __ \   / __ \  |  __ \   / ____|
+// | |__    | |__) | | |__) | | |  | | | |__) | | (___
+// |  __|   |  _  /  |  _  /  | |  | | |  _  /   \___ \
+// | |____  | | \ \  | | \ \  | |__| | | | \ \   ____) |
+// |______| |_|  \_\ |_|  \_\  \____/  |_|  \_\ |_____/
+//
 
 //
 //
@@ -101,53 +166,80 @@ app.use('/social_media', 		require('./routes/social_media'));
 //
 app.use(function(req, res, next) {
 
-	let err = new Error('Not Found');
-		err.status = 404;
+	//
+	//	1.	Create a visual message for a human
+	//
+	let error = new Error("Not Found");
 
-	next(err);
+	//
+	//	2.  The request is: Not Found.
+	//
+	error.status = 404;
+
+	//
+	//	->	Move to the next middelware
+	//
+	next(error);
 
 });
 
 //
 //  Display any error that occurred during the request.
 //
-app.use(function(err, req, res, next) {
+app.use(function(error, req, res, next) {
 
 	//
-	//	1.	Set the basic information about the error, that is going to be
-	//		displayed to user and developers regardless.
+	//	1.	Use the status of the error itself or set a default one.
+	//
+	let status = error.status || 500;
+
+	//
+	//	2.	If there was no status, and the default was set, we have to
+	//		add the status to the error object.
+	//
+	if(status === 500)
+	{
+		error.status = 500;
+	}
+
+	//
+	//	3.	Set the basic information about the error, that is going to be
+	//		displayed to user and developers - regardless.
 	//
 	let obj_message = {
-		message: err.message
-	};
+		message: error.message
+	}
 
 	//
-	//	2.	Check if the environment is development, and if it is we
-	//		will display the stack-trace
+	//	4.	Don't log the error when in production
 	//
-	if(process.env.NODE_ENV == 'development')
+	if(process.env.NODE_ENV != 'production')
 	{
 		//
 		//	1.	Set the variable to show the stack-trace to the developer
 		//
-		obj_message.error = err;
+		obj_message.error = error;
 
 		//
 		//	-> Show the error in the console
 		//
-		console.error(err);
+		console.error(error);
 	}
 
 	//
-	//	3.	Display a default status error, or pass the one from
-	//		the error message
+	//	6.	Set the status response as the one from the error message
 	//
-	res.status(err.status || 500);
+	res.status(status);
 
 	//
-	//	->	Show the error as JSON
+	//	7.	Send the error
 	//
 	res.json(obj_message);
+
+	//
+	//	->	Stop the request
+	//
+	res.end();
 
 });
 

@@ -7,6 +7,16 @@ let router = express.Router();
 //
 let data = [
 		{
+			text: "How to manipulate the terminal window using NodeJS",
+			url: "https://github.com/davidgatti/How-to-use-Readline-in-NodeJS",
+			icon: "⌨️"
+		},
+		{
+			text: "My Personal Development Setup for my Mac",
+			url: "https://github.com/davidgatti/my-development-setup",
+			icon: "💻"
+		},
+		{
 			text: "A step by step explanation how to take advantage of Streams in NodeJS",
 			url: "https://github.com/davidgatti/How-to-Understand-Streams-in-NodeJS",
 			icon: "🚰"
