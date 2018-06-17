@@ -1,13 +1,4 @@
-node_modules
-app/**/*.js
-app/**/*.js.map
-typings
-npm-debug.log
-public/ng2
-*.bak
-.idea
-*.iml
-*.ipr
-.DS_Store
-/bower_components
-*.env
+*DS_Store
+/node_modules
+/_output
+/_preview

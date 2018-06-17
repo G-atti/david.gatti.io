@@ -4,7 +4,6 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="I ♥ learning about new technologies, talking on podcasts about interesting stuff, and I&#39;m passionate about taking nice photos with my iPhone.">
 		<meta name="keywords" content="home page, david gatti, developer, podcaster, teacher">
 		<meta name="author" content="David Gatti">
 
@@ -33,10 +32,11 @@
 		<meta name="twitter:description" content="I'm 0x4461766964, and I ❤️ learning, 🗣 on podcasts, and taking 📸 with my iPhone.">
 		<meta name="twitter:image" content="./assets/images/og-image.jpg">
 
-		<title>David Gatti</title>
+		<title>{{ title }}</title>
+		<meta name="description" content="{{ description }}">
 
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="./assets/css/main.css">
+		<link rel="stylesheet" href="./assets/css/custom.css">
 
 	</head>
 
@@ -69,31 +69,13 @@
 
 		<div class="container">
 
-			<div class="row">
-
-				<div class="col-md-6 col-sm-12">
-
-					<h1>David Gatti</h1>
-
-					<p>I ❤️ learning about new technologies, 🗣 on podcasts about interesting stuff, and I'm passionate about taking nice 📸 with my iPhone.</p>
-
-				</div>
-			</div>
+			{{>body}}
 
 		</div>
 
 		<script crossorigin="anonymous" src="/assets/js/jquery-3.2.1.min.js"></script>
 		<script crossorigin="anonymous" src="/assets/js/popper-1.13.0.min.js"></script>
 		<script crossorigin="anonymous" src="/assets/js/bootstrap-v4.0.0-beta.2.min.js"></script>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111604482-2"></script>
-
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'UA-111604482-2');
-		</script>
 
 	</body>
 </html>
