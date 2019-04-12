@@ -27,6 +27,6 @@ phases:
       - if $PULL_REQUEST; then
           echo Site not deployed becasue this is a Pull Request.;
         else
-          potato -s _output -u -b david.gatti.pl;
+          potato -s _output -u -b david.gatti.io;
         fi
       - echo Build completed on `date`.
